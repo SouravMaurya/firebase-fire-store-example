@@ -144,8 +144,18 @@ class _AddUserScreenState extends State<AddUserScreen> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text(
-          'Firebase FireStore Example',
+          'Add User',
           style: TextStyle(color: Colors.white),
+        ),
+        leading: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            customBorder: const CircleBorder(),
+            child: const Icon(Icons.arrow_back_rounded, color: Colors.white),
+          ),
         ),
         backgroundColor: Theme.of(context).primaryColor,
       ),
@@ -224,7 +234,6 @@ class _AddUserScreenState extends State<AddUserScreen> {
     userQualificationNoController.text = '';
     userFContactNoController.text = '';
     userMContactNoController.text = '';
-    setState(() {
-    });
+    setState(() {});
   }
 }

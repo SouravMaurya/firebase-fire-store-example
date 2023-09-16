@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_firstore/screens/add_user_page.dart';
+import 'package:firebase_firstore/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -18,10 +19,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlueAccent),
         useMaterial3: true,
       ),
-      home: const AddUserScreen(),
+      home: const HomeScreen(),
     );
   }
 }
