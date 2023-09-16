@@ -29,9 +29,26 @@ class FirebaseCrud {
 
   /// To get user detail in fire store database
   static Stream<QuerySnapshot> readUser() {
-    CollectionReference notesItemCollection =
-        _collection;
+    CollectionReference notesItemCollection = _collection;
 
     return notesItemCollection.snapshots();
+  }
+
+  /// To delete user detail in fire store database
+  static Future<Response> deleteUser({
+    required String docId,
+  }) async {
+    Response response = Response();
+    DocumentReference documentReferencer = _collection.doc(docId);
+
+    await documentReferencer.delete().whenComplete(() {
+      response.code = 200;
+      response.message = "Successfully Deleted User";
+    }).catchError((e) {
+      response.code = 500;
+      response.message = e;
+    });
+
+    return response;
   }
 }

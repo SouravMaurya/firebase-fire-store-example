@@ -1,4 +1,5 @@
 import 'package:firebase_firstore/screens/add_user_page.dart';
+import 'package:firebase_firstore/screens/user_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () async {
+        onPressed: () {
           Navigator.push(
               context,
               MaterialPageRoute(
@@ -40,7 +41,13 @@ class _HomeScreenState extends State<HomeScreen> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () async {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const UserListScreen(),
+              ));
+        },
         child: const Text(
           "User List",
           style: TextStyle(color: Colors.white, fontSize: 22),
